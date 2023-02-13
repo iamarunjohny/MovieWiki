@@ -1,0 +1,48 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<head>
+    <title>User</title>
+</head>
+<body>
+    <h1>UPDATE USER PROFILE</h1>
+    <form method="post">
+        <table>
+             {% csrf_token %}
+            <tr>
+                <td>username</td>
+                <td><input type="text" name="uname" id="" value="{{ kk.username }}"></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td><input type="password" name="passw" id="" value="{{ kk.password }}"></td>
+            </tr>
+            <tr>
+                <td>DOB</td>
+                <td><input type="date" name="dob" id="" value="{{ kk.dob }}"></td>
+            </tr>
+            <tr>
+                <td>country</td>
+                <td><input type="text" name="country" id="" value="{{ kk.country }}"></td>
+            </tr>
+            <tr>
+                <td>language</td>
+                <td><input type="text" name="lang" id="" value="{{ kk.language }}"></td>
+            </tr>
+            <tr>
+                <td>mail id</td>
+                <td><input type="email" name="email" id="" value="{{ kk.mail_id }}"></td>
+            </tr>
+            <tr>
+                <td>phone</td>
+                <td><input type="text" name="phone" id="" value="{{ kk.phone }}"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="SUBMIT" id=""></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+{% endblock %}

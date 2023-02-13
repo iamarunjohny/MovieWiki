@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title>Feedback</title>
+</head>
+<body>
+    <h1>FEEDBACK</h1>
+    <form method="post">
+        <table>
+            {% csrf_token %}
+            <tr>
+                <td>movie name</td>
+                <td><input type="text" name="mname" id=""></td>
+            </tr>
+            <tr>
+                <td>year</td>
+                <td><input type="number" min="1900" max="2100" name="year"></td>
+            </tr>
+            <tr>
+                <td>discription</td>
+                <td><input type="text" name="dis" ></td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td><input type="date" name="date" id=""></td>
+            </tr>
+            <tr>
+                <td>rating</td>
+                <td><input type="phone" min="1" max="10" name="rating"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="SUBMIT" id=""></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>watched</th>
+            <th>Movie name</th>
+        </tr>
+         {% for i in kk %}
+        <tr>
+            <th>{{ i.watched_id }}</th>
+            <th>{{ i.m.name }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+{% endblock %}

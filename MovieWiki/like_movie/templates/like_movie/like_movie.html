@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>Like Movie</title>
+</head>
+<body>
+    <h1>LIKE</h1>
+    <form method="post">
+        <table>
+            {% csrf_token %}
+{#            <tr>#}
+{#                <td>status</td>#}
+{#                <td><input type="text" name="status" id=""></td>#}
+{#            </tr>#}
+            <tr>
+                <td>status</td>
+                <td><input type="radio"  name="like" value="yes" id="yes"><label for="yes">yes</label></td>
+                <td><input type="radio" name="like" value="no" id="no"><label for="no">no</label></td>
+            </tr>
+            <tr>
+                <td>movie name</td>
+                <td><select name="mname">
+                    {% for i in x %}
+                        <option value="{{ i.m_id }}">{{ i.name }}</option>
+                    {% endfor %}
+                </select> </td>
+            </tr>
+{#            <tr>#}
+{#                <td>u-id</td>#}
+{#                <td><input type="text" name="uid" id=""></td>#}
+{#            </tr>#}
+            <tr>
+                <td></td>
+                <td><input type="submit" name="subit" value="SUBMIT" id=""></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

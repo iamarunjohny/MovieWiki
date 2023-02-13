@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Watchlist</title>
+</head>
+
+<body>
+    <h1>WATCHLIST</h1>
+    <form method="post">
+        <table>
+             {% csrf_token %}
+            <tr>
+                <td>movie</td>
+                <td><select name="mname">
+                    {% for i in x %}
+                        <option value="{{ i.m_id }}">{{ i.name }}</option>
+                    {% endfor %}
+                </select> </td>
+            </tr>
+            <tr>
+                <td>username</td>
+                <td><select name="uname">
+                    {% for i in y %}
+                        <option value="{{ i.u_id }}">{{ i.username }}</option>
+                    {% endfor %}
+                </select> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="SUBMIT" id=""></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>movie name</th>
+            <th>year</th>
+            <th>discription</th>
+            <th>date</th>
+            <th>rating</th>
+        </tr>
+
+        {% for i in kk %}
+
+        <tr>
+            <td>{{ i.movie_name }}</td>
+            <td>{{ i.year }}</td>
+            <td>{{ i.discription }}</td>
+            <td>{{ i.date }}</td>
+            <td>{{ i.rating }}</td>
+            <td><a href="{% url 'rpy' idd=i.f_id %}">Reply</a></td>
+{#            <td><a href="">Reject</a></td>#}
+        </tr>
+
+        {% endfor %}
+    </table>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,158 @@
+
+{#    <!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta http-equiv="X-UA-Compatible" content="IE=edge">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <title>Document</title>#}
+{#</head>#}
+{#<body>#}
+{#    <table border="2">#}
+{#        <tr>#}
+{#            <th>name</th>#}
+{#            <th>year</th>#}
+{#            <th>director</th>#}
+{#            <th>rating</th>#}
+{#            <th>runtime</th>#}
+{#            <th>discription</th>#}
+{#            <th>source</th>#}
+{#            <th>likes</th>#}
+{#            <th>trailer</th>#}
+{#            <th>poster</th>#}
+{#            <th>category</th>#}
+{#            <th>language</th>#}
+{#        </tr>#}
+{##}
+{#         {% for i in kt %}#}
+{#        <tr>#}
+{#            <td>{{ i.name }}</td>#}
+{#            <td>{{ i.year }}</td>#}
+{#            <td>{{ i.director }}</td>#}
+{#            <td>{{ i.rating }}</td>#}
+{#            <td>{{ i.runtime }}</td>#}
+{#            <td>{{ i.discription }}</td>#}
+{#            <td>{{ i.source }}</td>#}
+{#            <td>{{ i.likes }}</td>#}
+{#            <td>{{ i.trailer }}</td>#}
+{#            <td>{{ i.poster }}</td>#}
+{#            <td>{{ i.category }}</td>#}
+{#            <td>{{ i.language }}</td>#}
+{##}
+{#        </tr>#}
+{#        {% endfor %}#}
+{#    </table>#}
+{#</body>#}
+{#</html>#}
+
+{% extends 'temp/user.html' %}
+{% block base %}
+
+
+<section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg">
+                    <div class="trending__product">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <div class="section-title">
+                                    <h4>Trending Now</h4>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="btn__all">
+                                    <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            {% for i in kt %}
+
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="/static/{{ i.poster }}">
+                                        <div class="ep">18 / 18</div>
+                                        <div class="comment"><i class="fa fa-star"></i> {{ i.rating }}</div>
+                                        <div class="view"><i class="fa fa-calendar-check-o"></i> {{ i.year }}</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>{{ i.category }}</li>
+                                            <li>{{ i.director }}</li>
+                                            <li>{{ i.language }}</li>
+{#                                            <li>{{ i.director }}</li>#}
+                                        </ul>
+                                        <h5><a href="#">{{ i.name }}</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+                                                </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{#                            <div class="col-lg-3 col-md-6 col-sm-6">#}
+{#                                <div class="product__item">#}
+{#                                    <div class="product__item__pic set-bg" data-setbg="/static/img/trending/trend-2.jpg">#}
+{#                                        <div class="ep">18 / 18</div>#}
+{#                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>#}
+{#                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>#}
+{#                                    </div>#}
+{#                                    <div class="product__item__text">#}
+{#                                        <ul>#}
+{#                                            <li>Active</li>#}
+{#                                            <li>Movie</li>#}
+{#                                        </ul>#}
+{#                                        <h5><a href="#">Gintama Movie 2: Kanketsu-hen - Yorozuya yo Eien</a></h5>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-lg-3 col-md-6 col-sm-6">#}
+{#                                <div class="product__item">#}
+{#                                    <div class="product__item__pic set-bg" data-setbg="/static/img/trending/trend-3.jpg">#}
+{#                                        <div class="ep">18 / 18</div>#}
+{#                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>#}
+{#                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>#}
+{#                                    </div>#}
+{#                                    <div class="product__item__text">#}
+{#                                        <ul>#}
+{#                                            <li>Active</li>#}
+{#                                            <li>Movie</li>#}
+{#                                        </ul>#}
+{#                                        <h5><a href="#">Shingeki no Kyojin Season 3 Part 2</a></h5>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-lg-3 col-md-6 col-sm-6">#}
+{#                                <div class="product__item">#}
+{#                                    <div class="product__item__pic set-bg" data-setbg="/static/img/trending/trend-4.jpg">#}
+{#                                        <div class="ep">18 / 18</div>#}
+{#                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>#}
+{#                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>#}
+{#                                    </div>#}
+{#                                    <div class="product__item__text">#}
+{#                                        <ul>#}
+{#                                            <li>Active</li>#}
+{#                                            <li>Movie</li>#}
+{#                                        </ul>#}
+{#                                        <h5><a href="#">Fullmetal Alchemist: Brotherhood</a></h5>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+
+
+
+
+
+

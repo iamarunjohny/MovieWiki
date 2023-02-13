@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <title>Source</title>
+</head>
+<body>
+    <h1>SOURCE</h1>
+    <form method="post">
+        <table>
+             {% csrf_token %}
+            <tr>
+                <td>movie name</td>
+                <td><select name="mname">
+                    {% for i in x %}
+                        <option value="{{ i.m_id }}">{{ i.name }}</option>
+                    {% endfor %}
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>source</td>
+                <td><input type="text" name="src" id=""></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="SUBMIT" id=""></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

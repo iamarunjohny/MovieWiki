@@ -1,0 +1,76 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+
+<head>
+    <title>Movie</title>
+</head>
+
+<body>
+    <h1>MOVIE</h1>
+    <form method="post">
+        <table>
+             {% csrf_token %}
+            <tr>
+                <td>name</td>
+                <td><input type="text" name="mname"></td>
+            </tr>
+{#            <tr>#}
+{#                <td>photo</td>#}
+{#                <td><input type="file" name="photo"></td>#}
+{#            </tr>#}
+            <tr>
+                <td>year</td>
+                <td><input type="number" min="1900" max="2100" name="year"></td>
+            </tr>
+            <tr>
+                <td>director</td>
+                <td><input type="text" name="dir" ></td>
+            </tr>
+            <tr>
+                <td>rating</td>
+                <td><input type="number" min="1" max="10" name="rating"></td>
+            </tr>
+            <tr>
+                <td>discription</td>
+                <td><input type="text" name="dis" ></td>
+            </tr>
+            <tr>
+                <td>runtime</td>
+                <td><input type="text" name="rtime" ></td>
+            </tr>
+            <tr>
+                <td>category</td>
+                <td><input type="text" name="cat"></td>
+            </tr>
+            <tr>
+                <td>source</td>
+                <td><input type="text" name="src" ></td>
+            </tr>
+            <tr>
+                <td>like</td>
+                <td><input type="radio"  name="like" value="yes" id="yes"><label for="yes">yes</label></td>
+                <td><input type="radio" name="like" value="no" id="no"><label for="no">no</label></td>
+            </tr>
+            <tr>
+                <td>trailer</td>
+                <td><input type="text" name="trailer"></td>
+            </tr>
+            <tr>
+                <td>cover poster</td>
+                <td><input type="file" name="cover" ></td>
+            </tr>
+            <tr>
+                <td>language</td>
+                <td><input type="text" name="lang" ></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="SUBMIT"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
+{% endblock %}

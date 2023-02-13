@@ -1,0 +1,47 @@
+{% extends 'temp/admin.html' %}
+{% block base %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>name</th>
+            <th>year</th>
+            <th>director</th>
+            <th>rating</th>
+            <th>runtime</th>
+            <th>discription</th>
+            <th>source</th>
+            <th>likes</th>
+            <th>trailer</th>
+            <th>poster</th>
+            <th>category</th>
+            <th>language</th>
+        </tr>
+
+         {% for i in kt %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.year }}</td>
+            <td>{{ i.director }}</td>
+            <td>{{ i.rating }}</td>
+            <td>{{ i.runtime }}</td>
+            <td>{{ i.discription }}</td>
+            <td>{{ i.source }}</td>
+            <td>{{ i.likes }}</td>
+            <td>{{ i.trailer }}</td>
+            <td>{{ i.poster }}</td>
+            <td>{{ i.category }}</td>
+            <td>{{ i.language }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+{% endblock %}

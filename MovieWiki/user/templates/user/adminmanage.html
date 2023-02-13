@@ -1,0 +1,38 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>username</th>
+            <th>password</th>
+            <th>DOB</th>
+            <th>country</th>
+            <th>language</th>
+            <th>mailid</th>
+            <th>phone</th>
+            <th>Status</th>
+        </tr>
+         {% for i in x %}
+        <tr>
+            <th>{{ i.username }}</th>
+            <th>{{ i.password }}</th>
+            <th>{{ i.dob }}</th>
+            <th>{{ i.country }}</th>
+            <th>{{ i.language }}</th>
+            <th>{{ i.mail_id }}</th>
+            <th>{{ i.phone }}</th>
+            <th>{{ i.status }}</th>
+        <th><a href="{% url 'aprove' idd=i.u_id %}">Aprove</a> </th>
+        <th><a href="{% url 'reject' idd=i.u_id %}">Reject</a> </th>
+
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+{% endblock %}

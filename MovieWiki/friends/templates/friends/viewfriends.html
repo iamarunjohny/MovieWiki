@@ -1,0 +1,38 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+    <table  class="bg-white" width="70%">
+        <tr style="height: 50px; background-color: #B0450D">
+            <th>username</th>
+            <th>liked</th>
+            <th>name</th>
+            <th>watched</th>
+            <th>status</th>
+            <th></th>
+            <th></th>
+        </tr>
+         {% for i in kc %}
+        <tr style="height: 50px;">
+            <td>{{ i.u.username}}</td>
+            <td>{{ i.liked }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.watched }}</td>
+            <td>{{ i.status }}</td>
+            <td><a href="{% url 'accept' idd=i.fr_id %}">Accept</a></td>
+            <td><a href="{% url 'reject' idd=i.fr_id %}">Reject</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>
+{% endblock %}

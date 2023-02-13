@@ -1,0 +1,33 @@
+{% extends 'temp/user.html'%}
+{% block base %}
+<!DOCTYPE html>
+<head>
+    <title>Request</title>
+</head>
+<body>
+    <h1>REQUEST</h1>
+    <form method="post">
+        <table>
+             {% csrf_token %}
+
+            <tr>
+                <td>movie name</td>
+                <td><input type="text" name="mname" id=""></td>
+            </tr>
+            <tr>
+                <td>release year</td>
+                <td><input type="text" name="year" id=""></td>
+            </tr>
+            <tr>
+                <td>language</td>
+                <td><input type="text" name="lang" id=""></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="SUBMIT" id=""></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+{% endblock %}
