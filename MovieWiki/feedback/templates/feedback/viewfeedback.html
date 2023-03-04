@@ -11,6 +11,7 @@
 <body>
     <table border="2">
         <tr>
+            <td>name</td>
             <th>movie name</th>
             <th>year</th>
             <th>discription</th>
@@ -21,6 +22,7 @@
         {% for i in kk %}
 
         <tr>
+        <td>{{ i.u.username }}</td>
             <td>{{ i.movie_name }}</td>
             <td>{{ i.year }}</td>
             <td>{{ i.discription }}</td>

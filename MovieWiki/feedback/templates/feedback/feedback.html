@@ -1,15 +1,21 @@
+{% extends 'temp/user.html' %}
+{% block base %}
 <!DOCTYPE html>
 <head>
     <title>Feedback</title>
 </head>
-<body>
-    <h1>FEEDBACK</h1>
-    <form method="post">
-        <table>
+
+<body class="text-danger" >
+
+    <h2 class="text-danger "align="center">FEEDBACK </h2>
+    <table align="center" class="border border-secondary" >
+
+    <form method="post" class="text-danger " >
+
             {% csrf_token %}
             <tr>
                 <td>movie name</td>
-                <td><input type="text" name="mname" id=""></td>
+                <td><input type="text" name="mname" id="" required="" class="form-control text-danger" ></td>
             </tr>
             <tr>
                 <td>year</td>
@@ -29,9 +35,11 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="submit" value="SUBMIT" id=""></td>
+                <td><input type="submit" name="submit" value="SUBMIT" id="" class="rounded-pill" ></td>
             </tr>
         </table>
     </form>
 </body>
 </html>
+
+{% endblock %}

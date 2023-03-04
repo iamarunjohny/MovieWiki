@@ -1,4 +1,5 @@
 from django.db import models
+from user.models import User
 
 # Create your models here.
 class Feedback(models.Model):
@@ -9,6 +10,8 @@ class Feedback(models.Model):
     date = models.DateField(db_column='Date')  # Field name made lowercase.
     rating = models.CharField(db_column='Rating', max_length=10)  # Field name made lowercase.
     reply = models.CharField(db_column='Reply', max_length=50)  # Field name made lowercase.
+    # u_id = models.IntegerField()
+    u=models.ForeignKey(User,to_field="u_id",on_delete=models.CASCADE)
 
     class Meta:
         managed = False

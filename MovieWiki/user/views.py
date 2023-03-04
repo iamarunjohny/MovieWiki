@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from user.models import User
+from login.models import Login
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -14,6 +16,16 @@ def user(request):
         obj.mail_id = request.POST.get('email')
         obj.phone = request.POST.get('phone')
         obj.save()
+
+        obb=Login()
+        obb.username = obj.username
+        obb.password = obj.password
+        obb.type = "user"
+        obb.uid=obj.u_id
+        obb.save()
+        return HttpResponseRedirect('/login/ login/')
+
+
     return render(request,'user/user.html')
 
 
@@ -52,6 +64,11 @@ def approve(request,idd):
     obj=User.objects.get(u_id=idd)
     obj.status="approve"
     obj.save()
+
+    
+    ob=Login.objects.get(uid=idd,type='user')
+    ob.status='approve'
+    ob.save()
     return view_admin(request)
 
 
