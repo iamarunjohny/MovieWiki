@@ -36,3 +36,18 @@ def reject(request,idd):
     ob.save()
 
     return viewfrnds(request)
+
+def us_view(request):
+    if request.method == "POST":
+        vv = request.POST.get('lop')
+        obj = Friends.objects.filter(u__username__istartswith=vv)
+        context = {
+            'x': obj
+        }
+        return render(request, 'friends/searchfriends.html',context)
+    else:
+        obj = Friends.objects.all()
+        context = {
+            'x': obj
+        }
+        return render(request, 'friends/searchfriends.html',context)

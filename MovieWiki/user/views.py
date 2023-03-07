@@ -30,7 +30,8 @@ def user(request):
 
 
 def viewfrnds(request):
-    ob=User.objects.all()
+    ss=request.session["uid"]
+    ob=User.objects.filter(u_id=ss)
     context={
         'kk':ob,
     }

@@ -6,8 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <table border="2">
-        <tr>
+<center>
+    <table class="table" style="width: 40%" >
+        <tr style="height: 50px; background-color: #B0450D">
             <th>username</th>
             <th>password</th>
             <th>DOB</th>
@@ -15,9 +16,10 @@
             <th>language</th>
             <th>mailid</th>
             <th>phone</th>
+            <th></th>
         </tr>
          {% for i in kk %}
-        <tr>
+        <tr style="background-color: white;">
             <th>{{ i.username }}</th>
             <th>{{ i.password }}</th>
             <th>{{ i.dob }}</th>
@@ -29,7 +31,7 @@
 
         </tr>
         {% endfor %}
-    </table>
+    </table></center>
 </body>
 </html>
 {% endblock %}

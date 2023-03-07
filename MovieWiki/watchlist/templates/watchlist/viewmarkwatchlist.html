@@ -9,20 +9,22 @@
     <title>Document</title>
 </head>
 <body>
-    <table border="2">
-        <tr>
+<center>
+    <table class="table" style="width: 40%;"border="2">
+        <tr style="background-color: white;">
             <th>watchlist</th>
             <th>Username</th>
             <th>Movie name</th>
         </tr>
          {% for i in kk %}
-        <tr>
+        <tr style="background-color: white;">
             <th>{{ i.w_id }}</th>
         <th>{{ i.u.username }}</th>
         <th>{{ i.m.name }}</th>
         </tr>
         {% endfor %}
     </table>
+</center>
 </body>
 </html>
 {% endblock %}

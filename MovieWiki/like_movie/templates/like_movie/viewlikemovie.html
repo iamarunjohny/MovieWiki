@@ -8,16 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+{#<style>#}
+{#    h2, table{#}
+{#        align: center;#}
+{#        color: white;#}
+{#    }#}
+{#    form{#}
+{#        align: center;#}
+{#    }#}
+{##}
+{#</style>#}
 <body>
-    <table border="2">
-        <tr>
+<center>
+    <table class="table" style="width: 40%;">
+        <tr style="height: 50px; background-color: #B0450D">
             <th>User name</th>
             <th>Movie name</th>
             <th>like</th>
         </tr>
 
          {% for i in km %}
-        <tr>
+        <tr style="background-color: white;">
             <th>{{ i.u.username }}</th>
             <th>{{ i.m.name }}</th>
             <th>{{ i.status }}</th>
@@ -25,6 +36,8 @@
          {% endfor %}
 
     </table>
+</center>
 </body>
+
 </html>
 {% endblock %}

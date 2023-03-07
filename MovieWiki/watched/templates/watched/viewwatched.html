@@ -9,18 +9,20 @@
     <title>Document</title>
 </head>
 <body>
-    <table border="2">
-        <tr>
+<center>
+    <table class="table" style="width: 40%;" border="2">
+        <tr style="height: 50px; background-color: #B0450D">
             <th>watched</th>
             <th>Movie name</th>
         </tr>
          {% for i in kk %}
-        <tr>
+        <tr style="background-color: white;">
             <th>{{ i.watched_id }}</th>
             <th>{{ i.m.name }}</th>
         </tr>
         {% endfor %}
     </table>
+</center>
 </body>
 </html>
 {% endblock %}

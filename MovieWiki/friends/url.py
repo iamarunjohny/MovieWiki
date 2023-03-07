@@ -6,4 +6,5 @@ urlpatterns=[
     url('viewf/',views.viewfrnds),
     url('accept/(?P<idd>\w+)',views.accept,name='accept'),
     url('reject/(?P<idd>\w+)',views.reject,name='reject'),
+    url('searchf/',views.us_view)
 ]

@@ -4,22 +4,30 @@
 <head>
     <title>Request</title>
 </head>
-<body>
-    <h1>REQUEST</h1>
-    <form method="post">
-        <table>
+    <style>
+    body{
+        color: white;
+    }
+    h2{
+        color: white;
+    }
+    </style>
+<body class=".bg-light" >
+    <h2 align="center" >REQUEST</h2>
+    <form method="post" >
+        <table align="center" >
              {% csrf_token %}
 
             <tr>
-                <td>movie name</td>
+                <td>movie name :</td>
                 <td><input type="text" name="mname" id=""></td>
             </tr>
             <tr>
-                <td>release year</td>
+                <td>release year :</td>
                 <td><input type="text" name="year" id=""></td>
             </tr>
             <tr>
-                <td>language</td>
+                <td>language :</td>
                 <td><input type="text" name="lang" id=""></td>
             </tr>
             <tr>

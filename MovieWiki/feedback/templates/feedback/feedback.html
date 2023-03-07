@@ -5,40 +5,42 @@
     <title>Feedback</title>
 </head>
 
-<body class="text-danger" >
+<body >
+<center>
+    <h2 style="background-color:ghostwhite; width: 40% " >FEEDBACK </h2>
+    <table class="table" style="width: 40%"  >
 
-    <h2 class="text-danger "align="center">FEEDBACK </h2>
-    <table align="center" class="border border-secondary" >
-
-    <form method="post" class="text-danger " >
+     <form method="post"  >
 
             {% csrf_token %}
-            <tr>
+            <tr style="background-color: white;">
                 <td>movie name</td>
                 <td><input type="text" name="mname" id="" required="" class="form-control text-danger" ></td>
             </tr>
-            <tr>
+            <tr style="background-color: white;">
                 <td>year</td>
                 <td><input type="number" min="1900" max="2100" name="year"></td>
             </tr>
-            <tr>
+            <tr style="background-color: white;">
                 <td>discription</td>
                 <td><input type="text" name="dis" ></td>
             </tr>
-            <tr>
+            <tr style="background-color: white;">
                 <td>date</td>
                 <td><input type="date" name="date" id=""></td>
             </tr>
-            <tr>
+            <tr style="background-color: white;">
                 <td>rating</td>
                 <td><input type="phone" min="1" max="10" name="rating"></td>
             </tr>
-            <tr>
+            <tr style="background-color: white;">
                 <td></td>
                 <td><input type="submit" name="submit" value="SUBMIT" id="" class="rounded-pill" ></td>
             </tr>
-        </table>
     </form>
+    </table>
+
+    </center>
 </body>
 </html>
 

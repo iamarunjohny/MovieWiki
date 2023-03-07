@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <table border="2">
-        <tr>
+<body  >
+<center>
+    <table class="table" style="width: 40%"   >
+        <tr style="height: 50px; background-color: #B0450D">
             <td>name</td>
             <th>movie name</th>
             <th>year</th>
@@ -21,18 +22,19 @@
 
         {% for i in rp %}
 
-        <tr>
+        <tr  style="background-color: white;">
         <td>{{ i.u.username }}</td>
             <td>{{ i.movie_name }}</td>
             <td>{{ i.year }}</td>
             <td>{{ i.discription }}</td>
             <td>{{ i.date }}</td>
-            <td>{{ i.rating }}</td>
+            <td style="color: #28a745">{{ i.rating }}</td>
 {#            <td><a href="">Reject</a></td>#}
         </tr>
 
         {% endfor %}
     </table>
+</center>
 </body>
 </html>
 
