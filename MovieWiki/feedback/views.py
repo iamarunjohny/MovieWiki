@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from feedback.models import Feedback
+import datetime
 
 
 # Create your views here.
@@ -10,7 +11,7 @@ def feedback(request):
         obj.movie_name = request.POST.get('mname')
         obj.year= request.POST.get('year')
         obj.discription= request.POST.get('dis')
-        obj.date= request.POST.get('date')
+        obj.date= datetime.datetime.today()
         obj.rating= request.POST.get('rating')
         obj.u_id=ss
         obj.save()

@@ -5,6 +5,7 @@ from user.models import User
 
 # Create your views here.
 def likemovie(request):
+    ss=request.session["uid"]
     obj=Movie.objects.all()
     context={
         'x':obj,
@@ -12,14 +13,15 @@ def likemovie(request):
     if request.method == 'POST':
         obj = LikeMovie()
         obj.status = request.POST.get('like')
-        obj.u_id = 1
+        obj.u_id = ss
         obj.m_id = request.POST.get('mname')
         obj.save()
     return render(request,'like_movie/like_movie.html',context)
 
 
 def viewlikemovie(request):
-    ob=LikeMovie.objects.filter(status='yes')
+    ss=request.session["uid"]
+    ob=LikeMovie.objects.filter(status='yes',u_id=ss)
     context={
         'km':ob,
     }

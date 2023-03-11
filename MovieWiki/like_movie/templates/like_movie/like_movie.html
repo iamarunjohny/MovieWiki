@@ -1,38 +1,45 @@
+{% extends 'temp/user.html' %}
+{% block base %}
 <!DOCTYPE html>
 <head>
     <title>Like Movie</title>
 </head>
 <body>
-    <h2>LIKE</h2>
+<center>
+    <h2 style="background-color:ghostwhite; width: 40% ">LIKE</h2>
     <form method="post" >
-        <table>
+        <table class="table" style="width: 40%" >
             {% csrf_token %}
 {#            <tr>#}
 {#                <td>status</td>#}
 {#                <td><input type="text" name="status" id=""></td>#}
 {#            </tr>#}
-            <tr>
+            <tr style="background-color: white;" >
                 <td>status</td>
                 <td><input type="radio"  name="like" value="yes" id="yes"><label for="yes">yes</label></td>
                 <td><input type="radio" name="like" value="no" id="no"><label for="no">no</label></td>
             </tr>
-            <tr>
+            <tr style="background-color: white;">
                 <td>movie name</td>
                 <td><select name="mname">
                     {% for i in x %}
                         <option value="{{ i.m_id }}">{{ i.name }}</option>
                     {% endfor %}
                 </select> </td>
+                <td></td>
             </tr>
 {#            <tr>#}
 {#                <td>u-id</td>#}
 {#                <td><input type="text" name="uid" id=""></td>#}
 {#            </tr>#}
-            <tr>
+            <tr style="background-color: white;">
                 <td></td>
                 <td><input type="submit" name="subit" value="SUBMIT" id=""></td>
+                <td></td>
             </tr>
         </table>
     </form>
 </body>
+    </center>
 </html>
+{% endblock %}

@@ -43,7 +43,7 @@ def update(request,idd):
         'kk': ob,
     }
     if request.method == 'POST':
-        obj = User()
+        obj = User.objects.get(u_id=idd)
         obj.username = request.POST.get('uname')
         obj.password = request.POST.get('passw')
         obj.dob = request.POST.get('dob')
@@ -52,6 +52,7 @@ def update(request,idd):
         obj.mail_id = request.POST.get('email')
         obj.phone = request.POST.get('phone')
         obj.save()
+        return viewfrnds(request)
     return render(request,'user/updateprofile.html',context)
 
 def view_admin(request):
