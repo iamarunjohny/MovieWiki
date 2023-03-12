@@ -1,28 +1,3 @@
-{#<!DOCTYPE html>#}
-{#<head>#}
-{#    <title>Login</title>#}
-{#</head>#}
-{#<body>#}
-{#    <h1>LOGIN</h1>#}
-{#    <form action="">#}
-{#        <table>#}
-{#            <tr>#}
-{#                <td>username</td>#}
-{#                <td><input type="text" name="uname"></td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <td>password</td>#}
-{#                <td><input type="password" name="passw"></td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <td></td>#}
-{#                <td><input type="submit" name="submit" value="LOGIN"></td>#}
-{#            </tr>#}
-{#        </table>#}
-{#    </form>#}
-{#</body>#}
-{#</html>#}
-
 
 {% extends 'temp/home.html' %}
 {% block base %}
@@ -36,8 +11,8 @@
                         <form method="post">
                             {% csrf_token %}
                             <div class="input__item">
-                                <input type="text" placeholder="Email address" name="uname">
-                                <span class="icon_mail"></span>
+                                <input type="text" placeholder="Username" name="uname">
+                                <span class="icon_profile"></span>
                             </div>
                             <div class="input__item">
                                 <input type="text" placeholder="Password" name="passw">
@@ -55,22 +30,6 @@
                     </div>
                 </div>
             </div>
-{#            <div class="login__social">#}
-{#                <div class="row d-flex justify-content-center">#}
-{#                    <div class="col-lg-6">#}
-{#                        <div class="login__social__links">#}
-{#                            <span>or</span>#}
-{#                            <ul>#}
-{#                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With#}
-{#                                Facebook</a></li>#}
-{#                                <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li>#}
-{#                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a>#}
-{#                                </li>#}
-{#                            </ul>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>div#}
         </div>
     </section>
 
