@@ -70,7 +70,7 @@
       <file leaf-file-name="user.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/temp/templates/temp/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7474">
+            <state relative-caret-position="962">
               <caret line="82" column="41" lean-forward="true" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
             </state>
           </provider>
@@ -426,7 +426,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="830" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -773,7 +773,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/temp/templates/temp/user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7474">
+        <state relative-caret-position="962">
           <caret line="82" column="41" lean-forward="true" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
         </state>
       </provider>

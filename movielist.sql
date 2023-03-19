@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2023 at 05:13 PM
+-- Generation Time: Mar 19, 2023 at 06:23 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -286,7 +286,7 @@ CREATE TABLE `django_session` (
 --
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
-('n02ko3co0c7uc69rrj7c110tmjppf0pu', 'eyJ1aWQiOjF9:1paSPf:unfTRW2iID1mtkF-LKMIokfWW8DumWu_LXjgkLMOJvQ', '2023-03-24 02:23:19.512468');
+('n02ko3co0c7uc69rrj7c110tmjppf0pu', 'eyJ1aWQiOjZ9:1pdwFO:gllhL66YJjF2qInOxP5a97BkcguShy1QLpLztwI-05o', '2023-04-02 16:51:06.820119');
 
 -- --------------------------------------------------------
 
@@ -425,11 +425,11 @@ CREATE TABLE `movie` (
 --
 
 INSERT INTO `movie` (`M_id`, `name`, `year`, `director`, `rating`, `runtime`, `discription`, `platform`, `likes`, `trailer`, `poster`, `language`, `category`) VALUES
-(1, 'Godfater', 1972, '\r\nFrancis Ford Coppola', '9.2', '2.55', 'Gangster movie', 'netf', 'yes', 'on youtube', 'godfather.jpg', 'English', 'crime'),
-(2, 'Mr. Queen', 2017, 'Yoon Sung-sik', '8.7', '4.5', 'hh', 'netflix', 'yes', 'on youtube', 'mrqueenPoster.jpg', 'Korean', 'comedy'),
-(3, 'Shutter Island', 2010, 'Martin Scorsese', '8.2', '2.17', 'Teddy Daniels and Chuck Aule, two US marshals, are', 'netflix', 'yes', 'on youtube', 'shutterislandPoster.jpg', 'English', 'Thriller/Mystery'),
-(6, 'The Shawshank Redemption', 1994, ' Frank Darabont', '9.3', '2.22', 'Andy Dufresne, a successful banker, is arrested fo', 'youtube', 'yes', 'youtube', 'shawshankPoster.jpg', 'English', 'Drama/Crime'),
-(7, 'Mr. Sunshine', 2018, ' Kim Eun-sook', '9.0', '1h15min', 'A Korean boy from a poor family who ends up in the', 'Amazon Prime,Netflix', 'yes', 'youtube', 'MrSunshine.jpg', 'korean', 'Romance, Melodrama, Sageuk');
+(1, 'Godfater', 1972, '\r\nFrancis Ford Coppola', '9.2', '2h 55m', 'Gangster movie', 'netf', 'yes', 'on youtube', 'godfather.jpg', 'English', 'crime'),
+(3, 'Shutter Island', 2010, 'Martin Scorsese', '8.2', ' 2h 18m', 'Teddy Daniels and Chuck Aule, two US marshals, are', 'netflix', 'yes', 'on youtube', 'shutterislandPoster.jpg', 'English', 'Thriller/Mystery'),
+(6, 'The Shawshank Redemption', 1994, ' Frank Darabont', '9.3', ' 2h 22m', 'Andy Dufresne, a successful banker, is arrested fo', 'youtube', 'yes', 'youtube', 'shawshankPoster.jpg', 'English', 'Drama/Crime'),
+(8, 'Shazam! Fury of the Gods', 2023, 'David F. Sandberg', '7', '2h 10m', 'Bestowed with the powers of the gods, Billy Batson', 'https://in.bookmyshow.com/buytickets/shazam-fury-o', 'yes', 'https://www.youtube.com/watch?v=AIc671o9yCI', 'shazam.jfif', 'English', 'Action/Adventure'),
+(9, 'Top Gun: Maverick', 2022, 'Joseph Kosinski', '8', ' 2h 11m', 'After more than 30 years of service as one of the ', 'https://www.primevideo.com/dp/amzn1.dv.gti.e686768', 'yes', 'https://www.youtube.com/watch?v=giXco2jaZ_4', 'topgunm.jpg', 'English', ' Action/Adventure');
 
 -- --------------------------------------------------------
 
@@ -771,7 +771,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `M_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `M_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `request`
