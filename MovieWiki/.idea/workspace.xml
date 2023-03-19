@@ -34,8 +34,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/temp/templates/temp/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="375" column="34" selection-start-line="375" selection-start-column="34" selection-end-line="375" selection-end-column="34" />
+            <state relative-caret-position="178">
+              <caret line="289" column="34" selection-start-line="289" selection-start-column="34" selection-end-line="289" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -61,8 +61,8 @@
       <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/temp/templates/temp/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="483" column="34" lean-forward="true" selection-start-line="413" selection-start-column="31" selection-end-line="483" selection-end-column="34" />
+            <state relative-caret-position="38">
+              <caret line="399" column="24" selection-start-line="399" selection-start-column="24" selection-end-line="412" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -70,8 +70,8 @@
       <file leaf-file-name="admin.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/temp/templates/temp/admin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="448" column="34" selection-start-line="448" selection-start-column="34" selection-end-line="448" selection-end-column="34" />
+            <state relative-caret-position="243">
+              <caret line="406" column="42" lean-forward="true" selection-start-line="406" selection-start-column="42" selection-end-line="406" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -151,8 +151,8 @@
         <option value="$PROJECT_DIR$/login/templates/login/login.html" />
         <option value="$PROJECT_DIR$/movie/templates/movie/viewadmin.html" />
         <option value="$PROJECT_DIR$/movie/templates/movie/viewmovie.html" />
-        <option value="$PROJECT_DIR$/temp/templates/temp/user.html" />
         <option value="$PROJECT_DIR$/temp/templates/temp/home.html" />
+        <option value="$PROJECT_DIR$/temp/templates/temp/user.html" />
         <option value="$PROJECT_DIR$/temp/templates/temp/admin.html" />
       </list>
     </option>
@@ -166,7 +166,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="1189" />
     <option name="height" value="1028" />
@@ -776,24 +776,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/temp/templates/temp/user.html">
+    <entry file="file://$PROJECT_DIR$/temp/templates/temp/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="483" column="34" lean-forward="true" selection-start-line="413" selection-start-column="31" selection-end-line="483" selection-end-column="34" />
+        <state relative-caret-position="178">
+          <caret line="289" column="34" selection-start-line="289" selection-start-column="34" selection-end-line="289" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/temp/templates/temp/home.html">
+    <entry file="file://$PROJECT_DIR$/temp/templates/temp/user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="375" column="34" selection-start-line="375" selection-start-column="34" selection-end-line="375" selection-end-column="34" />
+        <state relative-caret-position="38">
+          <caret line="399" column="24" selection-start-line="399" selection-start-column="24" selection-end-line="412" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/temp/templates/temp/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="448" column="34" selection-start-line="448" selection-start-column="34" selection-end-line="448" selection-end-column="34" />
+        <state relative-caret-position="243">
+          <caret line="406" column="42" lean-forward="true" selection-start-line="406" selection-start-column="42" selection-end-line="406" selection-end-column="42" />
         </state>
       </provider>
     </entry>
