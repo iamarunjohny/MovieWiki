@@ -9,12 +9,12 @@
 <body>
 <center>
     <h2 style="background-color:ghostwhite; width: 40% ">MOVIE</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <table class="table" style="width: 40%" >
              {% csrf_token %}
             <tr style="background-color: white;">
                 <td>name</td>
-                <td><input type="text" name="mname"></td>
+                <td><input type="text" name="mname" required=""></td>
 
             </tr>
 {#            <tr>#}
@@ -23,37 +23,37 @@
 {#            </tr>#}
             <tr style="background-color: white;">
                 <td>year</td>
-                <td><input type="number" min="1900" max="2100" name="year"></td>
+                <td><input type="number" min="1900" max="2100" name="year" required=""></td>
 
             </tr>
             <tr style="background-color: white;">
                 <td>director</td>
-                <td><input type="text" name="dir" ></td>
+                <td><input type="text" name="dir" required=""></td>
 
             </tr>
             <tr style="background-color: white;">
                 <td>rating</td>
-                <td><input type="number" min="1.0" max="10.0" name="rating"></td>
+                <td><input type="text" required pattern="[0-9]{10}" minlength="1" maxlength="10" name="rating"></td>
 
             </tr>
             <tr style="background-color: white;">
                 <td>discription</td>
-                <td><input type="text" name="dis" ></td>
+                <td><input type="text" name="dis" required=""></td>
 
             </tr>
             <tr style="background-color: white;">
                 <td>runtime</td>
-                <td><input type="text" name="rtime" ></td>
+                <td><input type="text" name="rtime" required=""></td>
 
             </tr>
             <tr style="background-color: white;">
                 <td>category</td>
-                <td><input type="text" name="cat"></td>
+                <td><input type="text" name="cat" required=""></td>
 
             </tr>
             <tr style="background-color: white;">
                 <td>source :</td>
-                <td><input type="text" name="src" ></td>
+                <td><input type="text" name="src" required=""></td>
 
             </tr>
             <tr style="background-color: white;">
@@ -67,15 +67,15 @@
             </tr>
             <tr style="background-color: white;">
                 <td>trailer</td>
-                <td><input type="text" name="trailer"></td>
+                <td><input type="text" name="trailer" required=""></td>
             </tr>
             <tr style="background-color: white;">
                 <td>cover poster</td>
-                <td><input type="file" name="cover" ></td>
+                <td><input type="file" name="cover" required=""></td>
             </tr>
             <tr style="background-color: white;">
                 <td>language</td>
-                <td><input type="text" name="lang" ></td>
+                <td><input type="text" name="lang" required=""></td>
             </tr>
             <tr style="background-color: white;">
                 <td></td>

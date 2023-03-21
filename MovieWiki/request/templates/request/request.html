@@ -13,29 +13,31 @@
     }
     </style>
 <body class=".bg-light" >
-    <h2 align="center" >REQUEST</h2>
-    <form method="post" >
-        <table align="center" >
+<center >
+    <h2  style="background-color: #0b0c2a" >REQUEST</h2>
+    <form method="post" style="color: black">
+        <table align="center" style="width: 40%"  >
              {% csrf_token %}
 
-            <tr>
+            <tr style="background-color: white;">
                 <td>movie name :</td>
-                <td><input type="text" name="mname" id=""></td>
+                <td><input type="text" name="mname" id="" required=""></td>
             </tr>
-            <tr>
+            <tr style="background-color: white;">
                 <td>release year :</td>
-                <td><input type="text" name="year" id=""></td>
+                <td><input type="text" name="year" id="" required=""></td>
             </tr>
-            <tr>
+            <tr style="background-color: white;">
                 <td>language :</td>
-                <td><input type="text" name="lang" id=""></td>
+                <td><input type="text" name="lang" id="" required=""></td>
             </tr>
-            <tr>
+            <tr style="background-color: white;">
                 <td></td>
                 <td><input type="submit" name="submit" value="SUBMIT" id=""></td>
             </tr>
         </table>
     </form>
+    </center>
 </body>
 </html>
 {% endblock %}

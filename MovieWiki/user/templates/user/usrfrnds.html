@@ -1,0 +1,44 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<center>
+    <table class="table" style="width: 40%" >
+    <tr>
+    <form method="post">
+        {% csrf_token %}
+        <td><input type="text" name="lop"></td>
+        <td><input type="submit" name="search" value="search" class="badge-danger"></td>
+    </form>
+</tr>
+        <tr style="height: 50px; background-color: #B0450D">
+            <th>username</th>
+{#            <th>password</th>#}
+{#            <th>DOB</th>#}
+{#            <th>country</th>#}
+{#            <th>language</th>#}
+{#            <th>mailid</th>#}
+{#            <th>phone</th>#}
+            <th></th>
+        </tr>
+         {% for i in x %}
+        <tr style="background-color: white;">
+            <th>{{ i.username }}</th>
+{#            <th>{{ i.password }}</th>#}
+{#            <th>{{ i.dob }}</th>#}
+{#            <th>{{ i.country }}</th>#}
+{#            <th>{{ i.language }}</th>#}
+{#            <th>{{ i.mail_id }}</th>#}
+{#            <th>{{ i.phone }}</th>#}
+        <th><a href="/friends/friends/{{ i.u_id }}">Add</a> </th>
+
+        </tr>
+        {% endfor %}
+    </table></center>
+</body>
+</html>
+{% endblock %}

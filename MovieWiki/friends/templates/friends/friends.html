@@ -13,22 +13,27 @@
             {% csrf_token %}
             <tr style="height: 50px;">
                 <td>username</td>
-                <td><input type="text" name="uname" id=""></td>
+                <td><select name="uname" required="">
+                <option value="">---select---</option>
+                    {% for i in x %}
+                        <option value="{{ i.u_id }}">{{ i.username }}</option>
+                    {% endfor %}
+                </select> </td>
             </tr>
-            <tr style="height: 50px;">
-                <td>liked</td>
-                <td><input type="radio"  name="like" value="yes" id="yes"><label for="yes">yes</label></td>
-                <td><input type="radio" name="like" value="no" id="no"><label for="no">no</label></td>
-            </tr>
-            <tr style="height: 50px;">
-                <td>name</td>
-                <td><input type="text" name="name" id=""></td>
-            </tr>
-            <tr style="height: 50px;">
-                <td>watched</td>
-                <td><input type="radio"  name="watch" value="yes" id="yes"><label for="yes">yes</label></td>
-                <td><input type="radio" name="watch" value="no" id="no"><label for="no">no</label></td>
-            </tr>
+{#            <tr style="height: 50px;">#}
+{#                <td>liked</td>#}
+{#                <td><input type="radio"  name="like" value="yes" id="yes"><label for="yes">yes</label></td>#}
+{#                <td><input type="radio" name="like" value="no" id="no"><label for="no">no</label></td>#}
+{#            </tr>#}
+{#            <tr style="height: 50px;">#}
+{#                <td>name</td>#}
+{#                <td><input type="text" name="name" id=""></td>#}
+{#            </tr>#}
+{#            <tr style="height: 50px;">#}
+{#                <td>watched</td>#}
+{#                <td><input type="radio"  name="watch" value="yes" id="yes"><label for="yes">yes</label></td>#}
+{#                <td><input type="radio" name="watch" value="no" id="no"><label for="no">no</label></td>#}
+{#            </tr>#}
             <tr style="height: 50px;">
                 <td></td>
                 <td><input type="submit" name="submit" value="SUBMIT" id=""></td>

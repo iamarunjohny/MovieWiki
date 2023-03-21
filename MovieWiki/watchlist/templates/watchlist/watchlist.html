@@ -15,17 +15,10 @@
              {% csrf_token %}
             <tr>
                 <td>movie</td>
-                <td><select name="mname">
+                <td><select name="mname" required="">
+                <option value="">--select movie name--</option>
                     {% for i in x %}
                         <option value="{{ i.m_id }}">{{ i.name }}</option>
-                    {% endfor %}
-                </select> </td>
-            </tr>
-            <tr>
-                <td>username</td>
-                <td><select name="uname">
-                    {% for i in y %}
-                        <option value="{{ i.u_id }}">{{ i.username }}</option>
                     {% endfor %}
                 </select> </td>
             </tr>

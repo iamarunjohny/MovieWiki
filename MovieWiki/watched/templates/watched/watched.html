@@ -5,13 +5,19 @@
     <title>Document</title>
 </head>
 <body>
+<center>
 <form method="post">
-    <table class="table">
+    <table class="table" style="width: 40%" >
 
          {% csrf_token %}
         <tr>
             <td>movie name</td>
-            <td><input type="text" name="mname" id=""></td>
+            <td><select name="mname" required="">
+            <option value="">--select movie name--</option>
+                {% for i in x %}
+                    <option value="{{ i.m_id }}">{{ i.name }}</option>
+                {% endfor %}
+            </select> </td>
         </tr>
         <tr>
             <td></td>
@@ -19,6 +25,7 @@
         </tr>
     </table>
 </form>
+</center>
 </body>
 </html>
 {% endblock %}

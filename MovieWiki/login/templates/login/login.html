@@ -11,11 +11,11 @@
                         <form method="post">
                             {% csrf_token %}
                             <div class="input__item">
-                                <input type="text" placeholder="Username" name="uname">
+                                <input type="text" placeholder="Username" name="uname" required="">
                                 <span class="icon_profile"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="Password" name="passw">
+                                <input type="password" placeholder="Password" name="passw" required="">
                                 <span class="icon_lock"></span>
                             </div>
                             <button type="submit" class="site-btn">Login Now</button>

@@ -77,5 +77,22 @@ def approve(request,idd):
 def reject(request,idd):
     obj=User.objects.get(u_id=idd)
     obj.status="reject"
-    obj.save()
+    obj.delete()
     return view_admin(request)
+
+
+def viewfusr(request):
+    if request.method == "POST":
+        vv = request.POST.get('lop')
+        obj = User.objects.filter(username__icontains=vv)
+        context = {
+            'x': obj
+        }
+        return render(request, 'user/usrfrnds.html',context)
+    else:
+        # ss=request.session["uid"]
+        # ob=User.objects.all()
+        # context={
+        #     'kk':ob,
+        # }
+        return render(request,'user/usrfrnds.html')

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2023 at 06:23 PM
+-- Generation Time: Mar 21, 2023 at 10:24 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -286,7 +286,7 @@ CREATE TABLE `django_session` (
 --
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
-('n02ko3co0c7uc69rrj7c110tmjppf0pu', 'eyJ1aWQiOjZ9:1pdwFO:gllhL66YJjF2qInOxP5a97BkcguShy1QLpLztwI-05o', '2023-04-02 16:51:06.820119');
+('n02ko3co0c7uc69rrj7c110tmjppf0pu', 'eyJ1aWQiOjExfQ:1peYCa:bBs1k1EMxMaw-zKu3Rf-es39loyMhiNp-y8jApuhn_g', '2023-04-04 09:22:44.518303');
 
 -- --------------------------------------------------------
 
@@ -296,7 +296,7 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 
 CREATE TABLE `feedback` (
   `F_id` int(11) NOT NULL,
-  `Movie_name` varchar(50) NOT NULL,
+  `m_id` int(11) NOT NULL,
   `Year` int(11) NOT NULL,
   `Discription` varchar(100) NOT NULL,
   `Date` date NOT NULL,
@@ -309,16 +309,17 @@ CREATE TABLE `feedback` (
 -- Dumping data for table `feedback`
 --
 
-INSERT INTO `feedback` (`F_id`, `Movie_name`, `Year`, `Discription`, `Date`, `Rating`, `Reply`, `u_id`) VALUES
-(1, 'Godfater', 2001, 'Gangster movie', '2023-02-22', '4', '', 0),
-(2, 'avatar', 2005, 'fgdchgv', '2023-02-07', '4', '', 0),
-(3, 'Godfater', 2005, 'Gangster movie', '2023-02-02', '9.3', 'thanku', 0),
-(4, 'GDFGD', 2005, 'fgdchgv', '2023-02-28', '9.3', 'ok thanks', 7),
-(5, 'Godfater', 2005, 'Gangster movie', '2023-03-15', '4', 'ssss', 7),
-(6, 'Mr. Sunshine', 2018, 'film is not good', '2023-03-07', '2', 'Ok this is really a bad movie', 6),
-(7, 'Godfater', 2001, 'Gangster movie', '2023-03-08', '4', '', 6),
-(8, 'Godfater', 1980, 'fdfgfg', '2023-03-08', '2', 'thanku', 6),
-(9, 'avatar', 1900, 'trfueyc', '2023-03-08', '4', 'ok', 6);
+INSERT INTO `feedback` (`F_id`, `m_id`, `Year`, `Discription`, `Date`, `Rating`, `Reply`, `u_id`) VALUES
+(1, 0, 2001, 'Gangster movie', '2023-02-22', '4', '', 0),
+(2, 0, 2005, 'fgdchgv', '2023-02-07', '4', '', 0),
+(3, 0, 2005, 'Gangster movie', '2023-02-02', '9.3', 'thanku', 0),
+(4, 0, 2005, 'fgdchgv', '2023-02-28', '9.3', 'ok thanks', 7),
+(5, 0, 2005, 'Gangster movie', '2023-03-15', '4', 'ssss', 7),
+(6, 0, 2018, 'film is not good', '2023-03-07', '2', 'Ok this is really a bad movie', 6),
+(7, 0, 2001, 'Gangster movie', '2023-03-08', '4', '', 6),
+(8, 0, 1980, 'fdfgfg', '2023-03-08', '2', 'thanku', 6),
+(9, 0, 1900, 'trfueyc', '2023-03-08', '4', 'ok', 6),
+(10, 1, 0, ' good movie', '2023-03-21', '9.3', 'Thanks for your feedback', 12);
 
 -- --------------------------------------------------------
 
@@ -332,18 +333,29 @@ CREATE TABLE `friends` (
   `liked` varchar(10) NOT NULL,
   `name` varchar(50) NOT NULL,
   `watched` varchar(10) NOT NULL,
-  `status` varchar(50) NOT NULL
+  `status` varchar(50) NOT NULL,
+  `uu_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `friends`
 --
 
-INSERT INTO `friends` (`Fr_id`, `U_id`, `liked`, `name`, `watched`, `status`) VALUES
-(1, '1', 'yes', 'Alex King', 'no', 'accepted'),
-(2, '2', 'no', 'spiderman', 'yes', 'accepted'),
-(3, '1', 'yes', 'batman', 'yes', 'accepted'),
-(4, '1', 'yes', 'mmm', 'yes', 'accepted');
+INSERT INTO `friends` (`Fr_id`, `U_id`, `liked`, `name`, `watched`, `status`, `uu_id`) VALUES
+(1, '1', 'yes', 'Alex King', 'no', 'accepted', 0),
+(2, '2', 'no', 'spiderman', 'yes', 'accepted', 0),
+(3, '1', 'yes', 'batman', 'yes', 'rejected', 0),
+(4, '1', 'yes', 'mmm', 'yes', 'rejected', 0),
+(5, '1', 'yes', 'Athena', 'no', 'accepted', 0),
+(6, '3', '', '', '', 'accepted', 0),
+(7, '11', '', '', '', 'rejected', 0),
+(8, '5', '', '', '', 'rejected', 0),
+(9, '11', '', '', '', 'accepted', 0),
+(10, '11', '', '', '', 'pending', 0),
+(11, '11', '', '', '', 'pending', 0),
+(12, '11', '', '', '', 'accepted', 12),
+(13, '6', '', '', '', 'pending', 12),
+(14, '6', '', '', '', 'accepted', 11);
 
 -- --------------------------------------------------------
 
@@ -369,7 +381,8 @@ INSERT INTO `like_movie` (`like_id`, `status`, `M_id`, `U_id`) VALUES
 (4, 'yes', 7, 1),
 (5, 'yes', 6, 6),
 (6, 'yes', 3, 6),
-(7, 'no', 3, 6);
+(7, 'no', 3, 6),
+(8, 'yes', 8, 12);
 
 -- --------------------------------------------------------
 
@@ -396,7 +409,9 @@ INSERT INTO `login` (`login_id`, `username`, `password`, `uid`, `type`, `status`
 (3, 'sinu', '1234', 5, 'user', 'approve'),
 (4, 'Shanif', 'qwerty', 6, 'user', 'approve'),
 (5, 'saf', 'saf', 7, 'user', ''),
-(6, 'arun', 'asdf', 8, 'user', 'approve');
+(6, 'arun', 'asdf', 8, 'user', 'approve'),
+(7, 'Arun Johny ', 'qwerty', 11, 'user', 'approve'),
+(8, 'shythya', 'shythya', 12, 'user', 'approve');
 
 -- --------------------------------------------------------
 
@@ -429,7 +444,9 @@ INSERT INTO `movie` (`M_id`, `name`, `year`, `director`, `rating`, `runtime`, `d
 (3, 'Shutter Island', 2010, 'Martin Scorsese', '8.2', ' 2h 18m', 'Teddy Daniels and Chuck Aule, two US marshals, are', 'netflix', 'yes', 'on youtube', 'shutterislandPoster.jpg', 'English', 'Thriller/Mystery'),
 (6, 'The Shawshank Redemption', 1994, ' Frank Darabont', '9.3', ' 2h 22m', 'Andy Dufresne, a successful banker, is arrested fo', 'youtube', 'yes', 'youtube', 'shawshankPoster.jpg', 'English', 'Drama/Crime'),
 (8, 'Shazam! Fury of the Gods', 2023, 'David F. Sandberg', '7', '2h 10m', 'Bestowed with the powers of the gods, Billy Batson', 'https://in.bookmyshow.com/buytickets/shazam-fury-o', 'yes', 'https://www.youtube.com/watch?v=AIc671o9yCI', 'shazam.jfif', 'English', 'Action/Adventure'),
-(9, 'Top Gun: Maverick', 2022, 'Joseph Kosinski', '8', ' 2h 11m', 'After more than 30 years of service as one of the ', 'https://www.primevideo.com/dp/amzn1.dv.gti.e686768', 'yes', 'https://www.youtube.com/watch?v=giXco2jaZ_4', 'topgunm.jpg', 'English', ' Action/Adventure');
+(9, 'Top Gun: Maverick', 2022, 'Joseph Kosinski', '8', ' 2h 11m', 'After more than 30 years of service as one of the ', 'https://www.primevideo.com/dp/amzn1.dv.gti.e686768', 'yes', 'https://www.youtube.com/watch?v=giXco2jaZ_4', 'topgunm.jpg', 'English', ' Action/Adventure'),
+(10, 'The Whale', 2022, ' Darren Aronofsky', '7', '1h 57m', 'In a town in Idaho, Charlie, a reclusive and unhea', 'https://www.sonyliv.com/movies/the-whale-100021370', 'yes', 'youtube', 'thew.jpg', 'English', 'Drama/Narrative'),
+(11, 'The Whale', 2023, ' Darren Aronofsky', '7', '1h 57m', 'In a town in Idaho, Charlie, a reclusive and unhea', 'https://www.sonyliv.com/movies/the-whale-100021370', 'yes', 'youtube', 'thew.jpg', 'English', 'Drama/Narrative');
 
 -- --------------------------------------------------------
 
@@ -454,7 +471,8 @@ INSERT INTO `request` (`movie_name`, `release_year`, `language`, `r_id`) VALUES
 ('Top Gun', 1980, 'eng', 3),
 ('Top Gun', 1980, 'eng', 4),
 ('Joji', 2022, 'Malayalan', 5),
-('Psycho', 1960, 'English', 6);
+('Psycho', 1960, 'English', 6),
+('THE BANSHEES OF INISHERIN', 2022, 'English', 7);
 
 -- --------------------------------------------------------
 
@@ -506,8 +524,8 @@ INSERT INTO `user` (`u_id`, `username`, `password`, `DOB`, `Country`, `Language`
 (6, 'Shanif K.C', 'qwerty', '2023-03-04', 'India', 'Englishjmmj', 'mtt02352@gmail.com', '+9189555414369', 'approve'),
 (7, 'saf', 'saf', '2023-03-31', 'India', 'Malayalan', 'arunjohny74@gmail.com', '9123456789', 'reject'),
 (8, 'arun', 'asdf', '2001-09-30', 'India', 'English', 'arunjohny74@gmail.com', '8590693089', 'approve'),
-(9, 'Shanifggg', 'qwerty', '2023-03-03', 'India', 'English', 'shanifkc@gmail.com', '912345777', 'reject'),
-(10, 'Shanifhh', 'qwerty', '2023-03-04', 'Indiamm', 'Englishjmmj', 'shanifkc@gmail.com', '912345777', 'approve');
+(11, 'Arun Johny ', 'qwerty', '2010-11-23', 'India', 'English', 'arunjohny74@gmail.com', '5434683464', 'approve'),
+(12, 'shythya', 'shythya', '0000-00-00', 'India', 'English', 'shythya@gmail.com', '8765667778', 'approve');
 
 -- --------------------------------------------------------
 
@@ -517,16 +535,24 @@ INSERT INTO `user` (`u_id`, `username`, `password`, `DOB`, `Country`, `Language`
 
 CREATE TABLE `watched` (
   `M_id` int(11) NOT NULL,
-  `Watched_id` int(11) NOT NULL
+  `Watched_id` int(11) NOT NULL,
+  `u_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `watched`
 --
 
-INSERT INTO `watched` (`M_id`, `Watched_id`) VALUES
-(1, 1),
-(1, 2);
+INSERT INTO `watched` (`M_id`, `Watched_id`, `u_id`) VALUES
+(1, 1, 0),
+(1, 2, 0),
+(1, 3, 0),
+(1, 4, 0),
+(1, 5, 0),
+(1, 6, 0),
+(3, 7, 0),
+(6, 8, 12),
+(3, 9, 12);
 
 -- --------------------------------------------------------
 
@@ -546,7 +572,12 @@ CREATE TABLE `watchlist` (
 
 INSERT INTO `watchlist` (`M_id`, `U_id`, `W_id`) VALUES
 (1, 1, 1),
-(1, 1, 2);
+(1, 1, 2),
+(3, 11, 3),
+(3, 11, 4),
+(9, 11, 5),
+(1, 12, 6),
+(9, 12, 7);
 
 --
 -- Indexes for dumped tables
@@ -747,37 +778,37 @@ ALTER TABLE `django_migrations`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `F_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `F_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `friends`
 --
 ALTER TABLE `friends`
-  MODIFY `Fr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Fr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `like_movie`
 --
 ALTER TABLE `like_movie`
-  MODIFY `like_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `like_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `M_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `M_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `source`
@@ -789,19 +820,19 @@ ALTER TABLE `source`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `watched`
 --
 ALTER TABLE `watched`
-  MODIFY `Watched_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Watched_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `watchlist`
 --
 ALTER TABLE `watchlist`
-  MODIFY `W_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `W_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

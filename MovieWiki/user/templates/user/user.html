@@ -83,31 +83,31 @@
                         <form method="post">
                             {% csrf_token %}
                             <div class="input__item">
-                                <input type="text" placeholder="USERNAME" name="uname">
+                                <input type="text" placeholder="USERNAME" name="uname" required="">
                                 <span class="icon_profile"></span>
                             </div>
                             <div class="input__item">
-                                <input type="date" placeholder="DOB" name="dob">
+                                <input type="date" placeholder="DOB" name="dob" required="">
                                 <span class="icon_calendar"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="Country" name="country">
+                                <input type="text" placeholder="Country" name="country" required="">
                                 <span class="icon_globe-2"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="Language" name="lang">
+                                <input type="text" placeholder="Language" name="lang" required="">
                                 <span class="icon_book"></span>
                             </div>
                             <div class="input__item">
-                                <input type="number" placeholder="Phone" name="phone">
+                                <input type="text" placeholder="Phone" name="phone" required pattern="[0-9]{10}" minlength="10" maxlength="10">
                                 <span class="icon_phone"></span>
                             </div>
                             <div class="input__item">
-                                <input type="email" placeholder="Email" name="email">
+                                <input type="email" placeholder="Email" name="email" required="">
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="Password" name="passw">
+                                <input type="password" placeholder="Password" name="passw" required="">
                                 <span class="icon_lock"></span>
                             </div>
                             <button type="submit" class="site-btn">Register Now</button>

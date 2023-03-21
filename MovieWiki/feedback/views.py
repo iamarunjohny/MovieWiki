@@ -1,21 +1,26 @@
 from django.shortcuts import render
 from feedback.models import Feedback
 import datetime
+from movie.models import Movie
 
 
 # Create your views here.
 def feedback(request):
+    obk=Movie.objects.all()
+    context={
+        'x':obk,
+    }
     ss= request.session['uid']
     if request.method=='POST':
         obj=Feedback()
-        obj.movie_name = request.POST.get('mname')
-        obj.year= request.POST.get('year')
+        obj.m_id=request.POST.get('mname')
+        # obj.year= request.POST.get('year')
         obj.discription= request.POST.get('dis')
         obj.date= datetime.datetime.today()
         obj.rating= request.POST.get('rating')
         obj.u_id=ss
         obj.save()
-    return render(request,'feedback/feedback.html')
+    return render(request,'feedback/feedback.html',context)
 
 
 def viewfeedback(request):
@@ -36,7 +41,8 @@ def replay(request,idd):
 
 
 def viewrply(request):
-    ob=Feedback.objects.all()
+    ss=ss= request.session['uid']
+    ob=Feedback.objects.filter(u_id=ss)
     context={
         'rp':ob,
     }

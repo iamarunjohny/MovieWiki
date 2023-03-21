@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from movie.models import Movie
+from django.core.files.storage import FileSystemStorage
 # Create your views here.
 def movie(request):
     if request.method == 'POST':
@@ -13,7 +14,11 @@ def movie(request):
         obj.likes = request.POST.get('like')
         obj.platform = request.POST.get('src')
         obj.trailer = request.POST.get('trailer')
-        obj.poster = request.POST.get('cover')
+        # obj.poster = request.POST.get('cover')
+        myfile=request.FILES['cover']
+        fs=FileSystemStorage()
+        filename=fs.save(myfile.name,myfile)
+        obj.poster=myfile.name
         obj.language = request.POST.get('lang')
         obj.category = request.POST.get('cat')
         obj.save()

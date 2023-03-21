@@ -8,6 +8,7 @@ urlpatterns=[
     url('adminmanage/',views.view_admin),
     url('userapprove/(?P<idd>\w+)',views.approve,name='aprove'),
     url('userreject/(?P<idd>\w+)',views.reject,name='reject'),
+    url('usrsrr/',views.viewfusr),
 
 
 ]

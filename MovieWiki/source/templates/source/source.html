@@ -9,7 +9,7 @@
              {% csrf_token %}
             <tr>
                 <td>movie name</td>
-                <td><select name="mname">
+                <td><select name="mname" required="">
                     {% for i in x %}
                         <option value="{{ i.m_id }}">{{ i.name }}</option>
                     {% endfor %}
@@ -18,7 +18,7 @@
             </tr>
             <tr>
                 <td>source</td>
-                <td><input type="text" name="src" id=""></td>
+                <td><input type="text" name="src" id="" required=""></td>
             </tr>
             <tr>
                 <td></td>

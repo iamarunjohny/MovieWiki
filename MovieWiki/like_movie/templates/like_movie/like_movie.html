@@ -21,7 +21,7 @@
             </tr>
             <tr style="background-color: white;">
                 <td>movie name</td>
-                <td><select name="mname">
+                <td><select name="mname" required="">
                     {% for i in x %}
                         <option value="{{ i.m_id }}">{{ i.name }}</option>
                     {% endfor %}
